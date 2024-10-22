@@ -7,15 +7,9 @@ const generatePassword = (length, options) => {
     const numbers = "0123456789";
     const specialChars = "!@#$%^&*()";
 
-<<<<<<< HEAD
    
     let dictionary = "";
     let password= "";
-=======
-    // TODO: Create a variable for the character set based on selected options
-   let dictionary = "";
-   let password= "";
->>>>>>> 00789a7958648c04c952e89386af2149e37ded63
 
    
    if (options.includeUppercase) {
@@ -52,8 +46,4 @@ const generatePassword = (length, options) => {
 module.exports = {
     generatePassword,
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 00789a7958648c04c952e89386af2149e37ded63
 
