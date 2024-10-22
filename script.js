@@ -8,7 +8,7 @@ const generatePassword = (length, options) => {
     const specialChars = "!@#$%^&*()";
 
     // TODO: Create a variable for the character set based on selected options
-    let CharacterSet= "";
+    let CharacterSet= '';
 
    // TODO: Generate the password based on the selected criteria
    if (options.includeUppercase) CharacterSet += uppercase;
@@ -16,11 +16,11 @@ const generatePassword = (length, options) => {
    if (options.includeNumbers) CharacterSet += numbers;
    if (options.includeSpecialChars) CharacterSet += specialChars;
 
-   if(CharacterSet ===""){
-    throw new Error("Please select at least one option for the password.");
+   if(CharacterSet ===''){
+    alert('Please select at least one option for the password.');
    }
    
-   let password ="";
+   let password ='';
    for (let i = 0; i<length; i++) {
        const randomIndex = Math.floor(Math.random() * CharacterSet.length);
        password += CharacterSet[randomIndex];
