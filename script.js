@@ -38,7 +38,7 @@ document.getElementById("generateBtn").addEventListener("click", function() {
         includeUppercase: document.getElementById("includeUppercase").checked,
         includeLowercase: document.getElementById("includeLowercase").checked,
         includeNumbers: document.getElementById("includeNumbers").checked,
-        includeSpecialChars: document.getElementById("includeSpecialChar").checked
+        includeSpecialChars: document.getElementById("includeSpecialChars").checked
     };
 
     const password = generatePassword(length, options);
