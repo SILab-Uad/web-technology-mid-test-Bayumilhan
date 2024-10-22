@@ -30,7 +30,7 @@ const generatePassword = (length, options) => {
    }
 
    if(dictionary ==="") { 
-    throw new Error("Please select at least one option for the password..");
+    throw new Error("At least one character type must be selected");
    }
    
    for (let i = password.length; i<length; i++) {
