@@ -11,10 +11,10 @@ const generatePassword = (length, options) => {
     let CharacterSet= "";
 
    // TODO: Generate the password based on the selected criteria
-   if (options.includeUppercase) CharacterSet += uppercase;
-   if (options.includeLowercase) CharacterSet += lowercase;
-   if (options.includeNumbers) CharacterSet += numbers;
-   if (options.includeSpecialChars) CharacterSet += specialChars;
+   if (options.includeUppercase) {CharacterSet += uppercase;}
+   if (options.includeLowercase) {CharacterSet += lowercase;}
+   if (options.includeNumbers) {CharacterSet += numbers;}
+   if (options.includeSpecialChars) {CharacterSet += specialChars;}
 
    if(CharacterSet ===""){
     alert("Please select at least one option for the password.")
@@ -46,4 +46,15 @@ document.getElementById("generateBtn").addEventListener("click", function() {
 });
 
 // BONUS: Implement the copy to clipboard functionality
+document.getElementById("copyBtn").addEventListener*("click", function() {
+    const password = document.getElementById("passwordOutput").textContent;
+    if (password) {
+        navigator.clipboard.writeText(password).then(() => {
+            alert("Password copied to clipboardwkwkwkw!");
+        }); 
+    } else {
+        alert("No password to copy");
+    }
+});
+
 
