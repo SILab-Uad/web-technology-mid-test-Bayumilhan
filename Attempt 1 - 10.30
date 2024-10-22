@@ -9,7 +9,7 @@ const generatePassword = (length, options) => {
 
     // TODO: Create a variable for the character set based on selected options
    let dictionary = "";
-    let password= "";
+   let password= "";
 
    
    if (options.includeUppercase) {
@@ -41,6 +41,10 @@ const generatePassword = (length, options) => {
    password = password.split('').sort(() => Math.random() - 0,5).join('');
 
    return password;
+};
+
+module.exports = {
+    generatePassword,
 };
 
 
