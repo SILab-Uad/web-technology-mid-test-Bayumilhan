@@ -18,6 +18,7 @@ const generatePassword = (length, options) => {
 
    if(CharacterSet ===''){
     alert('Please select at least one option for the password.');
+    return '';  
    }
    
    let password ='';
