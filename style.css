@@ -4,13 +4,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e7ff; /* Background color */
+    background-color: #83b3b3; /* Background color */
 }
 
 .container {
     text-align: center;
     padding: 30px;
-    background-color: #ffffff; /* Background color for container */
+    background-color: hsl(0, 0%, 100%); /* Background color for container */
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -25,3 +25,48 @@ h1 {
 }
 
 /* Add more styles here as needed */
+
+label {
+    font-size: 1em;
+    display: block;
+    margin-bottom: 11px;
+    color: black;
+}
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: solid 
+}
+
+input[type="checkbox"]{
+    margin-right: 10px;
+}
+
+button{
+    background-color: mediumseagreen;
+    color: white;
+    border: solid;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+#passwordOutput{
+    margin-top: 20px;
+    color: #ff0000;
+    font-size: 1,5em;
+}
+
+#copyBtn{
+    margin-top: 10px;
+    color: white;
+    background-color: #83b3b3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+}
