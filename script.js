@@ -7,43 +7,40 @@ const generatePassword = (length, options) => {
     const numbers = "0123456789";
     const specialChars = "!@#$%^&*()";
 
-    // TODO: Create a variable for the character set based on selected options
-    let CharacterSet= "";
+   
+    let dictionary = "";
+    let password= "";
 
-   // TODO: Generate the password based on the selected criteria
-   if (options.includeUppercase) CharacterSet += uppercase;
-   if (options.includeLowercase) CharacterSet += lowercase;
-   if (options.includeNumbers) CharacterSet += numbers;
-   if (options.includeSpecialChars) CharacterSet += specialChars;
+   
+   if (options.includeUppercase) {
+       dictionary += uppercase;
+       password += uppercase[Math.floor(Math.random() * uppercase.length)];
+   }    
+   if (options.includeLowercase) {
+       dictionary += lowercase;
+       password += lowercase[Math.floor(Math.random() * lowercase.length)];
+   } 
+   if (options.includeNumbers) {
+       dictionary += numbers;
+       password += numbers[Math.floor(Math.random() * numbers.length)];
+   }
+   if (options.includeSpecialChars) {
+       dictionary += specialChars;
+       password += specialChars[Math.floor(Math.random() * specialChars.length)];
+   }
 
-   if(CharacterSet ===""){
-    alert("Please select at least one option for the password.")
-    return"";
+   if(dictionary ==="") { 
+    throw new Error("Please select at least one option for the password..");
    }
    
-   let password ="";
-   for (let i = 0; i<length; i++) {
-       const randomIndex = Math.floor(Math.random() * CharacterSet.length);
-       password += CharacterSet[randomIndex];
+   for (let i = password.length; i<length; i++) {
+       const randomIndex = Math.floor(Math.random() * dictionary.length);
+       password += dictionary[randomIndex];
    }
    
+   password = password.split('').sort(() => Math.random() - 0,5).join('');
+
    return password;
 };
 
-// TODO: Add event listener to the button to call generatePassword and display the output
-document.getElementById("generateBtn").addEventListener("click", function() {
-    const length = document.getElementById("length").value;
-
-    const options = {
-        includeUppercase: document.getElementById("includeUppercase").checked,
-        includeLowercase: document.getElementById("includeLowercase").checked,
-        includeNumbers: document.getElementById("includeNumbers").checked,
-        includeSpecialChars: document.getElementById("includeSpecialChar").checked
-    };
-
-    const password = generatePassword(length, options);
-    document.getElementById("passwordOutput").textContent = password;
-});
-
-// BONUS: Implement the copy to clipboard functionality
 
