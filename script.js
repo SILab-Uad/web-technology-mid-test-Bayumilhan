@@ -1,6 +1,6 @@
 // TODO: Implement the password generation logic based on user input
 
-const generatePassword = (Length, options) => {
+const generatePassword = (length, options) => {
     // Character sets for password generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -17,12 +17,11 @@ const generatePassword = (Length, options) => {
    if (options.includeSpecialChars) CharacterSet += specialChars;
 
    if(CharacterSet ===""){
-    alert("Please select at least one option for the password.")
-    return"";
+    throw new Error("Please select at least one option for the password.");
    }
    
    let password ="";
-   for (let i = 0; i<Length; i++) {
+   for (let i = 0; i<length; i++) {
        const randomIndex = Math.floor(Math.random() * CharacterSet.length);
        password += CharacterSet[randomIndex];
    }
